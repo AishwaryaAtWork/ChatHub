@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatHub</title>
+    <title>ChatHub | {{room}}</title>
     <style>
         body {
             margin: 0 auto;
@@ -85,7 +85,7 @@
                         }
                     },
                     error : (response)=>{
-                        alert("An error occured");
+                        // alert("An error occured");
                     }
                 });
             },1000);
@@ -126,7 +126,7 @@
             {% csrf_token %}
             <input type="hidden" name="username" id="username" value="{{username}}"/>
             <input type="hidden" name="room_id" id="room_id" value="{{room_details.id}}"/>
-            <input type="text" name="message" id="message" style="width: 100px;"/>
+            <input type="text" name="message" id="message" style="width: 100%;"/>
             <input type="submit" value="Send"/>
         </form>
     </div>
@@ -146,7 +146,7 @@
                 csrfmiddlewaretoken : $('input[name=csrfmiddlewaretoken]').val(),
             },
             success : (data)=>{
-                console.log(data);
+                // console.log(data);
             }
         });
         document.getElementById('message').value= "";
