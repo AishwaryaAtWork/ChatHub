@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/LOGO.png' %}" type="image/x-icon">
+    <title>ChatHub</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;  
+            background-image: url(https://img.freepik.com/premium-vector/mail-envelope-seamless-pattern-background-business-concept-vector-illustration-email-symbol-pattern_549897-455.jpg);
+            overflow: hidden;
+            background-position: center;
+            background-size: cover;
+        }
+        .overlay{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; 
+            background-color: rgba(8, 192, 35, 0.6);
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; 
+            border: 4px solid #45a049;
+        } 
+        .container{
+            width: 55rem;
+            border: 2px solid #d3cfcf;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .darker{
+            border-color: #ccc;
+            background-color: #ddd;
+        }
+        .container::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .container img{
+            float: left;
+            max-width: 60px;
+            width: 100%;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+        .container img.right{
+            float: right;
+            margin-left: 20px;
+            margin-right: 0;
+        }
+        .time-right{
+            float: right;
+            color: #aaa;
+        }
+        .time-left{
+            float: left;
+            color: #999;
+        }
+        input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+        background-color: #45a049;
+        }
+        
+        div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        }
+        </style> 
+
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="main">
+                {% block content%}
+
+                {% endblock content%}
+            </div>
+        </div>
+    
+</body>
+</html>
